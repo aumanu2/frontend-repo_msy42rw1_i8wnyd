@@ -1,28 +1,25 @@
-import { useState } from 'react'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import SkillsProjects from './components/SkillsProjects'
+import ExperienceContact from './components/ExperienceContact'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen bg-[#060814] text-white">
+      <div className="absolute inset-0 -z-0 pointer-events-none">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[90vw] h-[90vw] max-w-[1200px] rounded-full blur-3xl opacity-30 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.25),_rgba(167,139,250,0.15)_40%,_transparent_60%)]" />
       </div>
+
+      <Navbar />
+
+      <main className="relative pt-24">
+        <Hero />
+        <About />
+        <SkillsProjects />
+        <ExperienceContact />
+      </main>
     </div>
   )
 }
-
-export default App
